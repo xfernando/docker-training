@@ -4,6 +4,8 @@ services:
     image: mongo:3.4.0
     ports:
       - 27017:27017
+    volumes:
+      - mongo_data:/data/db
   demo:
     build: ./
     ports:
@@ -11,3 +13,5 @@ services:
     environment:
       - DB=db
       - DB_PORT=27017
+volumes:
+  mongo_data:

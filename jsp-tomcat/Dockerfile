@@ -3,5 +3,5 @@ COPY . /src
 WORKDIR /src
 RUN mvn package
 
-FROM tomcat:8.0.46-jre8
+FROM tomcat:8.0.46-jre8-alpine
 COPY --from=0 /src/target/SampleTomcatWebAppOnDocker.war /usr/local/tomcat/webapps

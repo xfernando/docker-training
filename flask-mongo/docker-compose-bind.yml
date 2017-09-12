@@ -4,6 +4,8 @@ services:
     image: mongo:3.4.0
     ports:
       - 27017:27017
+    volumes:
+      - ./data:/data/db
   demo:
     build: ./
     ports:
